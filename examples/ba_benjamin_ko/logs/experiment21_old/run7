@@ -1,0 +1,432 @@
+using saved target 'openmote'
+rlwrap ../../tools/serial-io/serialdump -b115200 /dev/ttyUSB1
+[INFO: Main      ] Starting Contiki-NG-develop/v5.0-21-g523874fba-dirty
+[INFO: Main      ] - Routing: RPL Lite
+[INFO: Main      ] - Net: sicslowpan
+[INFO: Main      ] - MAC: TSCH
+[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+[INFO: Main      ] - 802.15.4 TSCH default hopping sequence length: 4
+[INFO: Main      ] Node ID: 28184
+[INFO: Main      ] Link-layer address: 0012.4b00.1935.6e18
+[INFO: Main      ] Tentative link-local IPv6 address: fe80::212:4b00:1935:6e18
+[INFO: OpenMote  ] OpenMote-B
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+[INFO: App       ] Trying to get neighbour address.
+sf-simple: Schedule link 5 as RX with node 0012.4b00.1935.6e44
+sf-simple: Schedule link 50 as RX with node 0012.4b00.1935.6e44
+sf-simple: Schedule link 80 as RX with node 0012.4b00.1935.6e44
+sf-simple: Schedule link 90 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Added auto cells
+[INFO: App       ] Python: Start time 69s
+Relocations: Added a cell to pdr stats list  90
+[INFO: App       ] Relocation_process: Relocation process starting
+SENSING THE CELLSSENSING THE CELLStsch-slot-operation: looking at cell 90 tx-total:29 tx-success:29 and is relevant: 1
+[INFO: App       ] Relocation_process: Relocated 0 links with 1 added cells and 1 evaluated
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 10 46 37 56 
+[INFO: App       ] Added the 2 cell at 147s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 10 
+sf-simple: Schedule link 10 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (10, 1) at 148s
+Relocations: Added a cell to pdr stats list  10
+[INFO: App       ] Relocation_process: Relocation process starting
+SENSING THE CELLStsch-slot-operation: looking at cell 90 tx-total:25 tx-success:25 and is relevant: 1
+tsch-slot-operation: looking at cell 10 tx-total:30 tx-success:30 and is relevant: 0
+[INFO: App       ] Relocation_process: Relocated 0 links with 2 added cells and 1 evaluated
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 53 46 37 56 
+[INFO: App       ] Added the 3 cell at 187s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 53 
+sf-simple: Schedule link 53 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (53, 1) at 187s
+Relocations: Added a cell to pdr stats list  53
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 11 46 37 56 
+[INFO: App       ] Added the 4 cell at 213s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 11 
+sf-simple: Schedule link 11 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (11, 2) at 213s
+Relocations: Added a cell to pdr stats list  11
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 24 46 37 56 
+[INFO: App       ] Added the 5 cell at 233s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 24 
+sf-simple: Schedule link 24 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (24, 2) at 233s
+Relocations: Added a cell to pdr stats list  24
+[INFO: App       ] Relocation_process: Relocation process starting
+SENSING THE CELLStsch-slot-operation: looking at cell 90 tx-total:21 tx-success:21 and is relevant: 1
+tsch-slot-operation: looking at cell 10 tx-total:26 tx-success:26 and is relevant: 1
+tsch-slot-operation: looking at cell 53 tx-total:20 tx-success:20 and is relevant: 1
+tsch-slot-operation: looking at cell 11 tx-total:25 tx-success:25 and is relevant: 0
+tsch-slot-operation: looking at cell 24 tx-total:6 tx-success:6 and is relevant: 0
+[INFO: App       ] Relocation_process: Relocated 0 links with 5 added cells and 3 evaluated
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 25 46 37 56 
+[INFO: App       ] Added the 6 cell at 248s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 25 
+sf-simple: Schedule link 25 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (25, 1) at 249s
+Relocations: Added a cell to pdr stats list  25
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 100 46 37 56 
+[INFO: App       ] Added the 7 cell at 261s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 100 
+sf-simple: Schedule link 100 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (100, 3) at 261s
+Relocations: Added a cell to pdr stats list  100
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 63 46 37 56 
+[INFO: App       ] Added the 8 cell at 272s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 63 
+sf-simple: Schedule link 63 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (63, 1) at 273s
+Relocations: Added a cell to pdr stats list  63
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 79 46 37 56 
+[INFO: App       ] Added the 9 cell at 282s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 79 
+sf-simple: Schedule link 79 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (79, 1) at 282s
+Relocations: Added a cell to pdr stats list  79
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 42 46 37 56 
+[INFO: App       ] Added the 10 cell at 290s
+[INFO: App       ] sf-simple: Timeout occoured
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 42 46 37 56 
+[INFO: App       ] Added the 11 cell at 298s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 42 
+sf-simple: Schedule link 42 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (42, 3) at 298s
+Relocations: Added a cell to pdr stats list  42
+[INFO: App       ] Relocation_process: Relocation process starting
+SENSING THE CELLStsch-slot-operation: looking at cell 90 tx-total:18 tx-success:18 and is relevant: 1
+tsch-slot-operation: looking at cell 10 tx-total:23 tx-success:23 and is relevant: 1
+tsch-slot-operation: looking at cell 53 tx-total:16 tx-success:16 and is relevant: 1
+tsch-slot-operation: looking at cell 11 tx-total:22 tx-success:22 and is relevant: 1
+tsch-slot-operation: looking at cell 24 tx-total:19 tx-success:19 and is relevant: 1
+tsch-slot-operation: looking at cell 25 tx-total:16 tx-success:16 and is relevant: 1
+tsch-slot-operation: looking at cell 100 tx-total:23 tx-success:23 and is relevant: 1
+tsch-slot-operation: looking at cell 63 tx-total:28 tx-success:28 and is relevant: 0
+tsch-slot-operation: looking at cell 79 tx-total:18 tx-success:18 and is relevant: 0
+tsch-slot-operation: looking at cell 42 tx-total:3 tx-success:3 and is relevant: 0
+[INFO: App       ] Relocation_process: Relocated 0 links with 11 added cells and 7 evaluated
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 16 46 37 56 
+[INFO: App       ] Added the 12 cell at 305s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 16 
+sf-simple: Schedule link 16 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (16, 1) at 305s
+Relocations: Added a cell to pdr stats list  16
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 65 46 37 56 
+[INFO: App       ] Added the 13 cell at 312s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 65 
+sf-simple: Schedule link 65 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (65, 0) at 312s
+Relocations: Added a cell to pdr stats list  65
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 14 46 37 56 
+[INFO: App       ] Added the 14 cell at 317s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 14 
+sf-simple: Schedule link 14 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (14, 2) at 318s
+Relocations: Added a cell to pdr stats list  14
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 69 46 37 56 
+[INFO: App       ] Added the 15 cell at 323s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 69 
+sf-simple: Schedule link 69 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (69, 1) at 323s
+Relocations: Added a cell to pdr stats list  69
+SENSING THE CELLSSENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 1 93 92 56 
+[INFO: App       ] Added the 16 cell at 327s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 1 
+sf-simple: Schedule link 1 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (1, 0) at 328s
+Relocations: Added a cell to pdr stats list  1
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 6 93 92 56 
+[INFO: App       ] Added the 17 cell at 332s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 6 
+sf-simple: Schedule link 6 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (6, 0) at 332s
+Relocations: Added a cell to pdr stats list  6
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 29 93 92 56 
+[INFO: App       ] Added the 18 cell at 336s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 29 
+sf-simple: Schedule link 29 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (29, 2) at 336s
+Relocations: Added a cell to pdr stats list  29
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 64 93 92 56 
+[INFO: App       ] Added the 19 cell at 340s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 64 
+sf-simple: Schedule link 64 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (64, 0) at 340s
+Relocations: Added a cell to pdr stats list  64
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 34 93 92 56 
+[INFO: App       ] Added the 20 cell at 344s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 34 
+sf-simple: Schedule link 34 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (34, 3) at 344s
+Relocations: Added a cell to pdr stats list  34
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 46 93 92 56 
+[INFO: App       ] Added the 21 cell at 348s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 46 
+sf-simple: Schedule link 46 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (46, 2) at 348s
+Relocations: Added a cell to pdr stats list  46
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 26 93 92 56 
+[INFO: App       ] Added the 22 cell at 351s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 26 
+sf-simple: Schedule link 26 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (26, 3) at 351s
+Relocations: Added a cell to pdr stats list  26
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 94 93 92 56 
+[INFO: App       ] Added the 23 cell at 354s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 94 
+sf-simple: Schedule link 94 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (94, 0) at 355s
+Relocations: Added a cell to pdr stats list  94
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 48 93 92 56 
+[INFO: App       ] Added the 24 cell at 358s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 48 
+sf-simple: Schedule link 48 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (48, 0) at 358s
+Relocations: Added a cell to pdr stats list  48
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 9 93 92 56 
+[INFO: App       ] Added the 25 cell at 361s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 9 
+sf-simple: Schedule link 9 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (9, 1) at 361s
+[INFO: App       ] Relocation_process: Relocation process starting
+SENSING THE CELLStsch-slot-operation: looking at cell 90 tx-total:30 tx-success:30 and is relevant: 1
+tsch-slot-operation: looking at cell 10 tx-total:19 tx-success:19 and is relevant: 1
+tsch-slot-operation: looking at cell 53 tx-total:29 tx-success:29 and is relevant: 1
+tsch-slot-operation: looking at cell 11 tx-total:18 tx-success:18 and is relevant: 1
+tsch-slot-operation: looking at cell 24 tx-total:31 tx-success:31 and is relevant: 1
+tsch-slot-operation: looking at cell 25 tx-total:23 tx-success:23 and is relevant: 1
+tsch-slot-operation: looking at cell 100 tx-total:19 tx-success:19 and is relevant: 1
+tsch-slot-operation: looking at cell 63 tx-total:25 tx-success:25 and is relevant: 1
+tsch-slot-operation: looking at cell 79 tx-total:31 tx-success:31 and is relevant: 1
+tsch-slot-operation: looking at cell 42 tx-total:31 tx-success:31 and is relevant: 1
+tsch-slot-operation: looking at cell 16 tx-total:22 tx-success:22 and is relevant: 1
+tsch-slot-operation: looking at cell 65 tx-total:17 tx-success:17 and is relevant: 1
+tsch-slot-operation: looking at cell 14 tx-total:28 tx-success:28 and is relevant: 1
+tsch-slot-operation: looking at cell 69 tx-total:23 tx-success:23 and is relevant: 1
+tsch-slot-operation: looking at cell 1 tx-total:17 tx-success:17 and is relevant: 1
+tsch-slot-operation: looking at cell 6 tx-total:29 tx-success:29 and is relevant: 0
+tsch-slot-operation: looking at cell 29 tx-total:25 tx-success:23 and is relevant: 0
+tsch-slot-operation: looking at cell 64 tx-total:22 tx-success:22 and is relevant: 0
+tsch-slot-operation: looking at cell 34 tx-total:17 tx-success:16 and is relevant: 0
+tsch-slot-operation: looking at cell 46 tx-total:13 tx-success:13 and is relevant: 0
+tsch-slot-operation: looking at cell 26 tx-total:10 tx-success:10 and is relevant: 0
+tsch-slot-operation: looking at cell 94 tx-total:8 tx-success:8 and is relevant: 0
+tsch-slot-operation: looking at cell 48 tx-total:4 tx-success:4 and is relevant: 0
+Relocations: Added a cell to pdr stats list  9
+[INFO: App       ] Relocation_process: Relocated 0 links with 25 added cells and 15 evaluated
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 85 93 92 56 
+[INFO: App       ] Added the 26 cell at 364s
+[INFO: App       ] sf-simple: Timeout occoured
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 85 93 92 56 
+[INFO: App       ] Added the 27 cell at 366s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 85 
+sf-simple: Schedule link 85 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (85, 1) at 366s
+Relocations: Added a cell to pdr stats list  85
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 18 93 92 56 
+[INFO: App       ] Added the 28 cell at 369s
+[INFO: App       ] sf-simple: Timeout occoured
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 18 93 92 56 
+[INFO: App       ] Added the 29 cell at 371s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 18 
+sf-simple: Schedule link 18 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (18, 3) at 372s
+Relocations: Added a cell to pdr stats list  18
+SENSING THE CELLSsf-simple: Send a 6P Add Request for 1 links to node 0012.4b00.1935.6e44 with LinkList : 38 93 92 56 
+[INFO: App       ] Added the 30 cell at 373s
+[INFO: App       ] sf-simple: 6P ADD request sent with success[INFO: App       ] 
+[INFO: App       ] sf-simple: Received a Add Response packet
+sf-simple: Received a 6P Add Response with LinkList : 38 
+sf-simple: Schedule link 38 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] Python: Added a cell (38, 0) at 374s
+Relocations: Added a cell to pdr stats list  38
+[INFO: App       ] Relocation_process: Relocation process starting
+SENSING THE CELLStsch-slot-operation: looking at cell 90 tx-total:27 tx-success:27 and is relevant: 1
+tsch-slot-operation: looking at cell 10 tx-total:16 tx-success:16 and is relevant: 1
+tsch-slot-operation: looking at cell 53 tx-total:25 tx-success:25 and is relevant: 1
+tsch-slot-operation: looking at cell 11 tx-total:29 tx-success:5 and is relevant: 1
+tsch-slot-operation: looking at cell 24 tx-total:28 tx-success:28 and is relevant: 1
+tsch-slot-operation: looking at cell 25 tx-total:20 tx-success:20 and is relevant: 1
+tsch-slot-operation: looking at cell 100 tx-total:16 tx-success:16 and is relevant: 1
+tsch-slot-operation: looking at cell 63 tx-total:21 tx-success:21 and is relevant: 1
+tsch-slot-operation: looking at cell 79 tx-total:27 tx-success:27 and is relevant: 1
+tsch-slot-operation: looking at cell 42 tx-total:28 tx-success:28 and is relevant: 1
+tsch-slot-operation: looking at cell 16 tx-total:19 tx-success:19 and is relevant: 1
+tsch-slot-operation: looking at cell 65 tx-total:29 tx-success:29 and is relevant: 1
+tsch-slot-operation: looking at cell 14 tx-total:25 tx-success:25 and is relevant: 1
+tsch-slot-operation: looking at cell 69 tx-total:19 tx-success:19 and is relevant: 1
+tsch-slot-operation: looking at cell 1 tx-total:30 tx-success:30 and is relevant: 1
+tsch-slot-operation: looking at cell 6 tx-total:26 tx-success:26 and is relevant: 1
+tsch-slot-operation: looking at cell 29 tx-total:22 tx-success:1 and is relevant: 1
+tsch-slot-operation: looking at cell 64 tx-total:18 tx-success:18 and is relevant: 1
+tsch-slot-operation: looking at cell 34 tx-total:30 tx-success:25 and is relevant: 1
+tsch-slot-operation: looking at cell 46 tx-total:26 tx-success:26 and is relevant: 1
+tsch-slot-operation: looking at cell 26 tx-total:23 tx-success:23 and is relevant: 1
+tsch-slot-operation: looking at cell 94 tx-total:20 tx-success:20 and is relevant: 1
+tsch-slot-operation: looking at cell 48 tx-total:17 tx-success:17 and is relevant: 1
+tsch-slot-operation: looking at cell 9 tx-total:29 tx-success:29 and is relevant: 1
+tsch-slot-operation: looking at cell 85 tx-total:24 tx-success:24 and is relevant: 1
+tsch-slot-operation: looking at cell 18 tx-total:19 tx-success:19 and is relevant: 1
+tsch-slot-operation: looking at cell 38 tx-total:17 tx-success:17 and is relevant: 1
+[INFO: App       ] Relocation_process: Relocating cell with timeslot: 11 channel: 2
+sf-simple: Send a 6P Relocate Request for 1 links to node 0012.4b00.1935.6e44 with candidate List : 98 93 92 
+[INFO: App       ] sf-simple: 6P RELOCATE request sent with success[INFO: App       ] 
+sf-simple: Received a 6P Relocate Response from:0012.4b00.1935.6e44 with cells to relocate : 11 
+ and candidate list: 98 
+sf-simple: Schedule link 98 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] sf-simple: Remove cell
+[INFO: App       ] Relocation_process: Relocating cell with timeslot: 29 channel: 2
+[INFO: App       ] sf-simple: 6P RELOCATE request sent with failure or aborted[INFO: App       ] 
+sf-simple: Send a 6P Relocate Request for 1 links to node 0012.4b00.1935.6e44 with candidate List : 19 93 92 
+Relocations: Added a cell to pdr stats list  98
+Now have timeslot 98 at postions 3
+Now have timeslot 38 at postions 16
+[INFO: App       ] Relocation_process: Relocated 2 links with 30 added cells and 27 evaluated
+Relocations: Added a cell to pdr stats list  29
+[INFO: App       ] Relocation_process: Relocation process starting
+SENSING THE CELLStsch-slot-operation: looking at cell 90 tx-total:28 tx-success:28 and is relevant: 1
+tsch-slot-operation: looking at cell 10 tx-total:17 tx-success:17 and is relevant: 1
+tsch-slot-operation: looking at cell 53 tx-total:27 tx-success:27 and is relevant: 1
+tsch-slot-operation: looking at cell 98 tx-total:30 tx-success:30 and is relevant: 1
+tsch-slot-operation: looking at cell 24 tx-total:29 tx-success:29 and is relevant: 1
+tsch-slot-operation: looking at cell 25 tx-total:21 tx-success:20 and is relevant: 1
+tsch-slot-operation: looking at cell 100 tx-total:17 tx-success:17 and is relevant: 1
+tsch-slot-operation: looking at cell 63 tx-total:22 tx-success:22 and is relevant: 1
+tsch-slot-operation: looking at cell 79 tx-total:28 tx-success:28 and is relevant: 1
+tsch-slot-operation: looking at cell 42 tx-total:29 tx-success:29 and is relevant: 1
+tsch-slot-operation: looking at cell 16 tx-total:20 tx-success:19 and is relevant: 1
+tsch-slot-operation: looking at cell 65 tx-total:30 tx-success:30 and is relevant: 1
+tsch-slot-operation: looking at cell 14 tx-total:26 tx-success:3 and is relevant: 1
+tsch-slot-operation: looking at cell 69 tx-total:20 tx-success:20 and is relevant: 1
+tsch-slot-operation: looking at cell 1 tx-total:31 tx-success:31 and is relevant: 1
+tsch-slot-operation: looking at cell 6 tx-total:27 tx-success:26 and is relevant: 1
+tsch-slot-operation: looking at cell 38 tx-total:18 tx-success:18 and is relevant: 1
+tsch-slot-operation: looking at cell 64 tx-total:20 tx-success:20 and is relevant: 1
+tsch-slot-operation: looking at cell 34 tx-total:31 tx-success:30 and is relevant: 1
+tsch-slot-operation: looking at cell 46 tx-total:27 tx-success:27 and is relevant: 1
+tsch-slot-operation: looking at cell 26 tx-total:24 tx-success:24 and is relevant: 1
+tsch-slot-operation: looking at cell 94 tx-total:21 tx-success:21 and is relevant: 1
+tsch-slot-operation: looking at cell 48 tx-total:18 tx-success:18 and is relevant: 1
+tsch-slot-operation: looking at cell 9 tx-total:30 tx-success:30 and is relevant: 1
+tsch-slot-operation: looking at cell 85 tx-total:25 tx-success:25 and is relevant: 1
+tsch-slot-operation: looking at cell 18 tx-total:20 tx-success:19 and is relevant: 1
+tsch-slot-operation: looking at cell 29 tx-total:1 tx-success:0 and is relevant: 0
+[INFO: App       ] Relocation_process: Relocating cell with timeslot: 14 channel: 2
+sf-simple: Send a 6P Relocate Request for 1 links to node 0012.4b00.1935.6e44 with candidate List : 19 93 92 
+[INFO: App       ] sf-simple: 6P RELOCATE request sent with success[INFO: App       ] 
+sf-simple: Received a 6P Relocate Response from:0012.4b00.1935.6e44 with cells to relocate : 14 
+ and candidate list: 19 
+sf-simple: Schedule link 19 as TX with node 0012.4b00.1935.6e44
+[INFO: App       ] sf-simple: Remove cell
+Relocations: Added a cell to pdr stats list  19
+Now have timeslot 19 at postions 12
+[INFO: App       ] Relocation_process: Relocated 1 links with 30 added cells and 26 evaluated
+[INFO: App       ] Relocation_process: Relocation process starting
+SENSING THE CELLStsch-slot-operation: looking at cell 90 tx-total:27 tx-success:27 and is relevant: 1
+tsch-slot-operation: looking at cell 10 tx-total:16 tx-success:16 and is relevant: 1
+tsch-slot-operation: looking at cell 53 tx-total:25 tx-success:25 and is relevant: 1
+tsch-slot-operation: looking at cell 98 tx-total:29 tx-success:29 and is relevant: 1
+tsch-slot-operation: looking at cell 24 tx-total:28 tx-success:28 and is relevant: 1
+tsch-slot-operation: looking at cell 25 tx-total:20 tx-success:19 and is relevant: 1
+tsch-slot-operation: looking at cell 100 tx-total:16 tx-success:16 and is relevant: 1
+tsch-slot-operation: looking at cell 63 tx-total:21 tx-success:21 and is relevant: 1
+tsch-slot-operation: looking at cell 79 tx-total:27 tx-success:27 and is relevant: 1
+tsch-slot-operation: looking at cell 42 tx-total:28 tx-success:28 and is relevant: 1
+tsch-slot-operation: looking at cell 16 tx-total:19 tx-success:18 and is relevant: 1
+tsch-slot-operation: looking at cell 65 tx-total:29 tx-success:29 and is relevant: 1
+tsch-slot-operation: looking at cell 19 tx-total:29 tx-success:28 and is relevant: 1
+tsch-slot-operation: looking at cell 69 tx-total:19 tx-success:19 and is relevant: 1
+tsch-slot-operation: looking at cell 1 tx-total:30 tx-success:29 and is relevant: 1
+tsch-slot-operation: looking at cell 6 tx-total:26 tx-success:25 and is relevant: 1
+tsch-slot-operation: looking at cell 38 tx-total:17 tx-success:17 and is relevant: 1
+tsch-slot-operation: looking at cell 64 tx-total:18 tx-success:17 and is relevant: 1
+tsch-slot-operation: looking at cell 34 tx-total:30 tx-success:29 and is relevant: 1
+tsch-slot-operation: looking at cell 46 tx-total:26 tx-success:25 and is relevant: 1
+tsch-slot-operation: looking at cell 26 tx-total:23 tx-success:23 and is relevant: 1
+tsch-slot-operation: looking at cell 94 tx-total:20 tx-success:20 and is relevant: 1
+tsch-slot-operation: looking at cell 48 tx-total:17 tx-success:16 and is relevant: 1
+tsch-slot-operation: looking at cell 9 tx-total:29 tx-success:29 and is relevant: 1
+tsch-slot-operation: looking at cell 85 tx-total:24 tx-success:24 and is relevant: 1
+tsch-slot-operation: looking at cell 18 tx-total:19 tx-success:18 and is relevant: 1
+tsch-slot-operation: looking at cell 29 tx-total:16 tx-success:8 and is relevant: 1
+[INFO: App       ] Python: All cells 27 evaluated and no reloaction to be done anymore time 553s
+Python: 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+Python: relocation times 240, 240, 301, 301, 301, 301, 362, 362, 362, 362, 362, 362, 362, 362, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 0, 0, 0, 
+[INFO: Main      ] Starting Contiki-NG-develop/v5.0-21-g523874fba-dirty
+[INFO: Main      ] - Routing: RPL Lite
+[INFO: Main      ] - Net: sicslowpan
+[INFO: Main      ] - MAC: TSCH
+[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+[INFO: Main      ] - 802.15.4 TSCH default hopping sequence length: 4
+[INFO: Main      ] Node ID: 28184
+[INFO: Main      ] Link-layer address: 0012.4b00.1935.6e18
+[INFO: Main      ] Tentative link-local IPv6 address: fe80::212:4b00:1935:6e18
+[INFO: OpenMote  ] OpenMote-B

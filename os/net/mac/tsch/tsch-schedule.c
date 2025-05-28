@@ -235,6 +235,7 @@ tsch_schedule_add_link(struct tsch_slotframe *slotframe,
       l = tsch_schedule_get_link_by_timeslot(slotframe, timeslot);
       if(l != NULL) {
         tsch_schedule_remove_link(slotframe, l);
+        LOG_ERR("! Cell already scheduled, deleted cell to be added\n");
         l = NULL;
       }
     }

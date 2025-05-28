@@ -53,6 +53,8 @@
 #include "net/mac/framer/framer-802154.h"
 #include "net/mac/tsch/tsch.h"
 #include "sys/critical.h"
+#include "tsch-types.h"
+#include "tsch-slot-operation.h"
 
 #include "sys/log.h"
 /* TSCH debug macros, i.e. to set LEDs or GPIOs on various TSCH
@@ -177,6 +179,86 @@ static struct pt slot_operation_pt;
 /* Sub-protothreads of tsch_slot_operation */
 static PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t));
 static PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t));
+
+/* BA-Benjamin PDR additions START */
+
+typedef struct{
+  uint8_t index;
+  uint8_t timeslot;
+}rel_cell;
+
+static tsch_pdr_cell_list pdrCellList = {.cellAmount = 0};
+static rel_cell tsch_pdr_rel_cells_index[20];
+static uint8_t tsch_pdr_rel_cells_index_len;
+static uint8_t cell_number_relocated[MAX_ALLOCATE_CELLS] = {0};
+static uint8_t cell_number_relocated_len = 0;
+
+/* takes pointer to a cell list and fills it with cells that need to be relocated and returns the amount of cells evaluated */
+int tsch_stats_evaluate_cells_for_relocation(tsch_schedule_cell_stats *rel_return_list, uint8_t *return_list_len){
+  uint8_t evaluated_cells = 0;
+  tsch_pdr_rel_cells_index_len = 0;
+
+  /* go through all cells with pdr stats */
+  // printf("tsch-slot-operation: Looking at %u cells\n", pdrCellList.cellAmount);
+  for(int i=0; i<pdrCellList.cellAmount; i++){
+    tsch_schedule_cell_stats *currentCell = &(pdrCellList.cellList[i]);
+    printf("tsch-slot-operation: looking at cell %u tx-total:%u tx-success:%u and is relevant: %u\n", currentCell->slotOffset, currentCell->tx_total, currentCell->tx_success, currentCell->isStatisticallyRelevant);
+
+    if(currentCell->isStatisticallyRelevant && currentCell->tx_total > 0){
+      if((1.0f - ((float) currentCell->tx_success /(float) currentCell->tx_total)) > RELOCATE_PDRTHRES){
+        /* add cell to relocation list and increase list length */
+        rel_return_list[*return_list_len] = *currentCell;
+        (*return_list_len)++;
+        /* Insert into list for deletion off this list later */
+        tsch_pdr_rel_cells_index[tsch_pdr_rel_cells_index_len].index = i;
+        tsch_pdr_rel_cells_index[tsch_pdr_rel_cells_index_len].timeslot= currentCell->slotOffset;
+
+        /* Set which cell was relocated */
+        cell_number_relocated[currentCell->numberCellAllocated ] = 1;
+        tsch_pdr_rel_cells_index_len++;
+      }
+      evaluated_cells++;
+    }
+  }
+  TSCH_LOG_ADD(tsch_log_message,
+    snprintf(log->message, sizeof(log->message), "relocation: Evaluated cells for relocation %u\n", evaluated_cells);
+  );
+  return evaluated_cells;
+}
+
+/* given slotoffset returns the cell recorded in the pdr_cell_list*/
+tsch_schedule_cell_stats *tsch_stats_get_cell_pdr(uint16_t slotOffset){
+  tsch_schedule_cell_stats *ret = NULL;
+  for(int i=0; i<pdrCellList.cellAmount; i++){
+    if(pdrCellList.cellList[i].slotOffset == slotOffset){
+      ret = &(pdrCellList.cellList[i]);
+      break;
+    }
+  }
+  return ret;
+}
+
+void tsch_stats_delete_cells_pdr_list(){
+  for(int i=0; i<tsch_pdr_rel_cells_index_len; i++){
+    uint8_t delete_index = tsch_pdr_rel_cells_index[i].index;
+    pdrCellList.cellList[delete_index] = pdrCellList.cellList[pdrCellList.cellAmount - 1];
+    pdrCellList.cellAmount--;
+    printf("Now have timeslot %u at postions %d\n", pdrCellList.cellList[delete_index].slotOffset, delete_index);
+  }
+}
+
+
+void print_cell_pdr_list(){
+  printf("Python: ");
+  for(int i=0; i<cell_number_relocated_len; i++){
+    printf("%u, ", cell_number_relocated[i]);
+  }
+  printf("\n");
+}
+
+/* BA-Benjamin PDR additions END */
+
+
 
 /*---------------------------------------------------------------------------*/
 /* TSCH locking system. TSCH is locked during slot operations */
@@ -754,9 +836,48 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       ringbufindex_put(&dequeued_ringbuf);
     }
 
-    /* If this is an unicast packet to timesource, update stats */
-    if(current_neighbor != NULL && current_neighbor->is_time_source) {
+    /* If this is an unicast packet to timesource, update stats for this cell */
+    if(current_neighbor != NULL && current_neighbor->is_time_source && current_link->timeslot != 0) {
       tsch_stats_tx_packet(current_neighbor, mac_tx_status, tsch_current_channel);
+
+      /* BA-Benjamin PDR additions START */
+      /* get the cell from the pdr-cell-list */
+      tsch_schedule_cell_stats *currentCell = tsch_stats_get_cell_pdr(current_link->timeslot);
+      uint8_t skip_cell_stats = 0;
+      // if cell has been tracked already then increment counters dependent on 6P ack
+      for(int ind = 0; ind<tsch_pdr_rel_cells_index_len; ind++){
+        if(tsch_pdr_rel_cells_index[ind].timeslot == currentCell->slotOffset){
+          skip_cell_stats = 1;
+          break;
+        }
+      }   
+
+      if(currentCell != NULL && skip_cell_stats == 0){
+        currentCell->tx_total++;
+        currentCell->tx_success = (mac_tx_status == MAC_TX_OK)? (currentCell->tx_success + 1) : currentCell->tx_success;
+        /* If MAX_NUMTX is reached then halve the amount for weighting */
+        if(currentCell->tx_total >= MAX_NUM_TX){
+          currentCell->tx_total = (uint16_t)(currentCell->tx_total / 2);
+          currentCell->tx_success = currentCell->tx_success / 2;
+          currentCell->isStatisticallyRelevant = 1;
+        }
+      }
+      else if(skip_cell_stats == 0){ /*insert values into the next free spot in the array*/
+        uint8_t newCellIndex = pdrCellList.cellAmount;
+
+        if(newCellIndex < MAX_ALLOCATE_CELLS){
+          pdrCellList.cellList[newCellIndex].channelOffset = current_link->channel_offset;
+          pdrCellList.cellList[newCellIndex].slotOffset = current_link->timeslot;
+          pdrCellList.cellList[newCellIndex].isStatisticallyRelevant = 0;
+          pdrCellList.cellList[newCellIndex].tx_total = 1;
+          pdrCellList.cellList[newCellIndex].tx_success = (mac_tx_status == MAC_TX_OK)? 1 : 0;
+          pdrCellList.cellList[newCellIndex].numberCellAllocated = pdrCellList.cellAmount;
+          pdrCellList.cellAmount++;
+          cell_number_relocated_len++;
+          printf("Relocations: Added a cell to pdr stats list  %u\n", current_link->timeslot);
+        }
+      }
+      /* BA-Benjamin PDR additions END */
     }
 
     /* Log every tx attempt */

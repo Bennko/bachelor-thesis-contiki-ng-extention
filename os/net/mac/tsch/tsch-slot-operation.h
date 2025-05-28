@@ -60,7 +60,38 @@ extern clock_time_t tsch_last_sync_time;
 /* Counts the length of the current burst */
 extern int tsch_current_burst_count;
 
+
+/* BA-Benjamin PDR additions START */
+#define MAX_ALLOCATE_CELLS 60
+#define RELOCATE_PDRTHRES 0.5
+#define MAX_NUM_TX 32
+
+typedef struct{
+    uint8_t slotOffset;
+    uint8_t channelOffset;
+    uint16_t tx_total;
+    uint16_t tx_success;
+    uint8_t isStatisticallyRelevant; /*After first evaluation set to 1*/
+    uint8_t numberCellAllocated;
+}tsch_schedule_cell_stats;
+
+typedef struct{
+    tsch_schedule_cell_stats cellList[MAX_ALLOCATE_CELLS];
+    uint8_t cellAmount;
+}tsch_pdr_cell_list;
+
+tsch_schedule_cell_stats *tsch_stats_get_cell_pdr(uint16_t slotOffset);
+int tsch_stats_evaluate_cells_for_relocation(tsch_schedule_cell_stats *rel_return_list, uint8_t *return_list_len);
+void tsch_stats_delete_cells_pdr_list();
+void print_cell_pdr_list();
+
+
+/* BA-Benjamin PDR additions END */
+
+
+
 /********** Functions *********/
+
 
 /**
  * Checks if the TSCH lock is set. Accesses to global structures outside of
@@ -95,4 +126,4 @@ void tsch_slot_operation_sync(rtimer_clock_t next_slot_start,
 void tsch_slot_operation_start(void);
 
 #endif /* TSCH_SLOT_OPERATION_H_ */
-/** @} */
+/** @} **/

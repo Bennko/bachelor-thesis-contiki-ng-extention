@@ -46,6 +46,11 @@
 
 #include "contiki.h"
 
+//BA-BENJAMIN Ko
+
+#define TSCH_CONF_LEDS_STATUS 1  // Enable LED status indication
+
+
 /******** Configuration: synchronization *******/
 
 /* Max time before sending a unicast keep-alive message to the time source */
